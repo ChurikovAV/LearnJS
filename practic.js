@@ -122,18 +122,13 @@
 
 // checkServings();
 
-function chooseOptExpenses () {
-    let i = 1;
-    let optionalExpenses = {
-        1: "",
-        2: "",
-        3: ""
-    };
 
-    while ( i < 4) {
+let i = 1;
+let optionalExpenses = {};
+function chooseOptExpenses () {
+    while (i < 4) {
        optionalExpenses[i] = prompt ("Статья необязательных расходов?", "");
        i++;
-       console.log(chooseOptExpenses[i]);
     }
 }
 
