@@ -61,10 +61,18 @@ let appData = {
             appData.optionalExpenses[i] = opt;
         }
     },
+    
+    
     chooseIncome: function() {
         let items = prompt("Что принесёт дополнительный доход (Перечислите через запятую)", "");
+        
+        while(isFinite(items) == true || items == "" || items == null){           
+            items = prompt("Что принесёт дополнительный доход (Перечислите через запятую)", "");
+        }
         appData.income = items.split(', ');
         appData.income.push(prompt("Может что-то ещё?"));
         appData.income.sort();
     }
 };
+
+appData.chooseIncome();
