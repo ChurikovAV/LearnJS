@@ -10,7 +10,7 @@ function start() {
     }
 }
 
-start();
+// start();
 
 let appData = {
     budget: money,
@@ -23,7 +23,7 @@ let appData = {
         for (let i = 0; i < 2; i++) {
             let a = prompt ("Введите обязательную статью расходов в этом месяце", ""),
                 b = prompt ("Во сколько обойдется?", "");
-            if ( typeof(a)==='string' && typeof(a) != null && typeof(b) != null && a != "" && b != "" && a.length < 50) {
+            if (typeof(a)==='string' && typeof(a) != null && typeof(b) != null && a != "" && b != "" && a.length < 50) {
                 console.log ("done");
                 appData.expenses[a] = b;
             } else {                            
@@ -65,6 +65,7 @@ let appData = {
     
     chooseIncome: function() {
         let items = prompt("Что принесёт дополнительный доход (Перечислите через запятую)", "");
+<<<<<<< Updated upstream
         
         while(isFinite(items) == true || items == "" || items == null){           
             items = prompt("Что принесёт дополнительный доход (Перечислите через запятую)", "");
@@ -76,3 +77,24 @@ let appData = {
 };
 
 appData.chooseIncome();
+=======
+
+        if (typeof(items) === 'string' && items && typeof(+items) !== 'number') {
+            appData.income = items.split(', ');
+            appData.income.push(prompt("Может что-то ещё?"));
+            appData.income.sort();
+        } else {
+            let items = prompt("Что принесёт дополнительный доход (Перечислите через запятую)", "");
+            appData.chooseIncome();
+        }
+
+        // forEach(items) {
+        //     alert("Способы доп.заработка: " + items) {
+                
+        //     }
+        // }
+    }
+};
+appData.chooseIncome();
+
+>>>>>>> Stashed changes
